@@ -1,0 +1,36 @@
+@mixin clearFixx{
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+
+// Media Query Manager
+
+/* 0-600 px   -  phone
+   600-900 px -  tablet-potrait
+   900-1200 px - tablet-landscape
+   1200-1800 px - Normal styling
+   above 1800 px - big-desktops
+
+
+   $Breakpoint name
+   ult-small phone= 0-400px
+   small-phone = 0-550px
+   phone    =   550-600px(37.5em)
+   tab-pot  =   600-900px(56.25em)
+   tab-land =   900-1200px(75em)
+   big-desktops = above 1800px (112.5em)
+*/
+
+@mixin respond($Breakpoint){
+    @if $Breakpoint== ult-small-phone{@media (max-width:400px){@content}};
+    @if $Breakpoint== small-phone{@media (max-width:550px){@content}};
+    @if $Breakpoint == phone{@media (max-width:600px){@content}};
+    @if $Breakpoint == tab-port {@media (max-width:900px){ @content }};
+    @if $Breakpoint == tab-land{@media (max-width:1200px){@content}};
+    @if $Breakpoint == big-desktops{@media (min-width:1800px){@content}};
+}
+   

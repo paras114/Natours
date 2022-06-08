@@ -1,0 +1,84 @@
+.footer{
+    background-color: $grey-dark-2;
+    padding: 10rem 0rem;
+    font-size: 1.4rem;
+    @include respond(tab-port){
+        padding: 7rem  0rem 1rem 0rem;
+    }
+    @include respond(ult-small-phone){
+        font-size: 1.7rem;
+    }
+
+
+    &__logo-box{
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+    &__logo{
+        width: 15rem;
+        
+    }
+    &__navigation{
+        border-top: 1px solid $grey;
+        text-align: center;
+        padding-top: 1rem;
+        display: inline-block;
+
+        @include respond(tab-port){
+            width: 100%;
+        }
+        @include respond(ult-small-phone){
+            padding-top: 3rem;
+        }
+    
+
+        
+    }
+    &__ul{
+        list-style-type: none;
+    }
+    &__items{
+        display: inline-block;
+        
+        &:not(:last-child){
+            margin-right:  2rem;
+        }
+        @include respond(ult-small-phone){
+            display: block;
+
+            &:not(:last-child){
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    &__link{
+        &:link,&:visited{
+        color: $color-grey-light-1;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all .2s;
+        background-color: $grey-dark-2;
+        }
+
+        &:hover,&:active{
+            color: $medium-green;
+        }
+    }
+    &__copyright{
+     float: right;   
+     border-top: 1px solid $grey;
+     text-align: center;
+     padding-top: 1rem;
+
+     @include respond(tab-port){
+        width: 100%;
+        float: none;
+    
+    }
+    @include respond(ult-small-phone){
+        padding-top: 3rem;
+    }
+
+    }
+}
